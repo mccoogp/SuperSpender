@@ -1,58 +1,59 @@
-[gd_scene load_steps=9 format=3 uid="uid://cisopxcgh8x3"]
+[gd_scene load_steps=9 format=3 uid="uid://bpx5qcij78f5c"]
 
-[ext_resource type="Texture2D" uid="uid://dvnaasv1gf184" path="res://Assets/sprites/knight.png" id="1_phl2a"]
+[ext_resource type="Texture2D" uid="uid://cxntfnfha146h" path="res://brackeys_platformer_assets/sprites/knight.png" id="1_o03tc"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qjalc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s1d51"]
-atlas = ExtResource("1_phl2a")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihhyb"]
+atlas = ExtResource("1_o03tc")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v58ky"]
-atlas = ExtResource("1_phl2a")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i17g"]
+atlas = ExtResource("1_o03tc")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w8xk8"]
-atlas = ExtResource("1_phl2a")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d2fe"]
+atlas = ExtResource("1_o03tc")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ajlo7"]
-atlas = ExtResource("1_phl2a")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx2od"]
+atlas = ExtResource("1_o03tc")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jykla"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fx7bh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s1d51")
+"texture": SubResource("AtlasTexture_ihhyb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v58ky")
+"texture": SubResource("AtlasTexture_7i17g")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w8xk8")
+"texture": SubResource("AtlasTexture_6d2fe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ajlo7")
+"texture": SubResource("AtlasTexture_hx2od")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yac6c"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2y2p4"]
 radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 3
 collision_layer = 3
 script = ExtResource("1_qjalc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
-sprite_frames = SubResource("SpriteFrames_jykla")
+sprite_frames = SubResource("SpriteFrames_fx7bh")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.21958
+frame_progress = 0.395298
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
-shape = SubResource("CircleShape2D_yac6c")
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_2y2p4")
