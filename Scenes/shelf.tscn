@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfrkjrt1gbxrj"]
+
+[ext_resource type="Texture2D" uid="uid://u5xy06h1hwdi" path="res://Assets/DerekAssets1/CUSSshelf.png" id="1_t3pqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pe44m"]
+size = Vector2(24, 4)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(94, 0)
+texture = ExtResource("1_t3pqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(94, 11)
+shape = SubResource("RectangleShape2D_pe44m")
+one_way_collision = true

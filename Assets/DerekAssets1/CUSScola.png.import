@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbthoje45gjq4"
-path="res://.godot/imported/CUSSdefEne.png-747888da68e39aa24429af74bb06802f.ctex"
+uid="uid://c77g6y7bn0j3x"
+path="res://.godot/imported/CUSScola.png-072830929295737e5784b3e9d9ce1cbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DerekAssets1/CUSSdefEne.png"
-dest_files=["res://.godot/imported/CUSSdefEne.png-747888da68e39aa24429af74bb06802f.ctex"]
+source_file="res://Assets/DerekAssets1/CUSScola.png"
+dest_files=["res://.godot/imported/CUSScola.png-072830929295737e5784b3e9d9ce1cbd.ctex"]
 
 [params]
 

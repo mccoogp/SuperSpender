@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kdlf605k3jt1"
-path="res://.godot/imported/CUSSsavescoCard.png-4ec9769308e6afdfc3cd97c45fdca894.ctex"
+uid="uid://nrk6o0o2wydi"
+path="res://.godot/imported/CUSSrotChicken.png-5d75778617b3996c87ab298de6d2e6d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DerekAssets1/CUSSsavescoCard.png"
-dest_files=["res://.godot/imported/CUSSsavescoCard.png-4ec9769308e6afdfc3cd97c45fdca894.ctex"]
+source_file="res://Assets/DerekAssets1/CUSSrotChicken.png"
+dest_files=["res://.godot/imported/CUSSrotChicken.png-5d75778617b3996c87ab298de6d2e6d2.ctex"]
 
 [params]
 

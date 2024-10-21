@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy2apgbs8ghgi"
-path="res://.godot/imported/CUSStv.png-017a26f2eaeb71dd1dd2331fbf928e7c.ctex"
+path="res://.godot/imported/CUSStv.png-d088865e42a66eeae9e7382c7e3350ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DerekAssets1/CUSStv.png"
-dest_files=["res://.godot/imported/CUSStv.png-017a26f2eaeb71dd1dd2331fbf928e7c.ctex"]
+source_file="res://Assets/DerekAssets1/CUSStv.png"
+dest_files=["res://.godot/imported/CUSStv.png-d088865e42a66eeae9e7382c7e3350ce.ctex"]
 
 [params]
 

@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://l0n4xi3cyp71"]
+
+[ext_resource type="PackedScene" uid="uid://bpx5qcij78f5c" path="res://Scenes/player.tscn" id="1_kkfru"]
+[ext_resource type="Texture2D" uid="uid://nrk6o0o2wydi" path="res://Assets/DerekAssets1/CUSSrotChicken.png" id="1_u80fj"]
+[ext_resource type="PackedScene" uid="uid://bsi7c0jae4mmd" path="res://Scenes/killzone.tscn" id="2_8t27f"]
+[ext_resource type="Texture2D" uid="uid://jh0a4hle0gw" path="res://Assets/DerekAssets1/CUSStestFloor.png" id="3_5yqp2"]
+[ext_resource type="PackedScene" uid="uid://dctt8ao0wvjef" path="res://Scenes/Coin.tscn" id="4_pv4gj"]
+[ext_resource type="PackedScene" uid="uid://dfrkjrt1gbxrj" path="res://Scenes/shelf.tscn" id="5_u65qf"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hicdn"]
+distance = -311.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7h7yl"]
+texture = ExtResource("3_5yqp2")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_3u5nx"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7h7yl")
+
+[node name="Game" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(41, -1)
+texture = ExtResource("1_u80fj")
+
+[node name="Player" parent="." instance=ExtResource("1_kkfru")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+limit_bottom = 600
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="Area2D2" parent="." instance=ExtResource("2_8t27f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("WorldBoundaryShape2D_hicdn")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_3u5nx")
+format = 2
+layer_0/tile_data = PackedInt32Array(131069, 0, 0, 196605, 0, 1, 131070, 65536, 0, 196606, 65536, 1, 131071, 0, 0, 196607, 0, 1, 65536, 65536, 0, 131072, 65536, 1, 65537, 0, 0, 131073, 0, 1, 65538, 65536, 0, 131074, 65536, 1, 65539, 0, 0, 131075, 0, 1, 65540, 65536, 0, 131076, 65536, 1, 65541, 0, 0, 131077, 0, 1, 65542, 65536, 0, 131078, 65536, 1, 65543, 0, 0, 131079, 0, 1, 65544, 65536, 0, 131080, 65536, 1, 65545, 0, 0, 131081, 0, 1, 65546, 65536, 0, 131082, 65536, 1, 65547, 0, 0, 131083, 0, 1, 65548, 65536, 0, 131084, 65536, 1, 65549, 0, 0, 131085, 0, 1, 65550, 65536, 0, 131086, 65536, 1, 131067, 0, 0, 196603, 0, 1, 131068, 65536, 0, 196604, 65536, 1, 131065, 0, 0, 196601, 0, 1, 131066, 65536, 0, 196602, 65536, 1, -262131, 0, 0, -262130, 65536, 0, -262133, 0, 0, -262132, 65536, 0, -262135, 0, 0, -262134, 65536, 0, -262137, 0, 0, -262136, 65536, 0)
+
+[node name="Coin2" parent="." instance=ExtResource("4_pv4gj")]
+position = Vector2(184, -86)
+
+[node name="Node2D" parent="." instance=ExtResource("5_u65qf")]
+position = Vector2(2, -1)
+
+[node name="Node2D2" parent="." instance=ExtResource("5_u65qf")]
+position = Vector2(2, -31)
+
+[node name="Node2D3" parent="." instance=ExtResource("5_u65qf")]
+position = Vector2(2, -61)
