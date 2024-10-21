@@ -4,18 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://bogvdibf3yube" path="res://DerekAssets1/CUSSsup.png" id="2_64rwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ndh4"]
-size = Vector2(28, 22)
+size = Vector2(28, 23)
 
 [node name="Coin" type="Node2D"]
 scale = Vector2(0.5, 0.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_64rwl")
 
 [node name="Coin2D" type="Area2D" parent="."]
 collision_mask = 3
 script = ExtResource("1_mhvqb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin2D"]
-position = Vector2(0, 2)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_4ndh4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Coin2D"]
+texture = ExtResource("2_64rwl")
+
+[connection signal="body_entered" from="Coin2D" to="Coin2D" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="Coin2D" to="Coin2D" method="_on_body_shape_entered"]

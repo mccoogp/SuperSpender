@@ -1,11 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://l0n4xi3cyp71"]
+[gd_scene load_steps=15 format=3 uid="uid://l0n4xi3cyp71"]
 
 [ext_resource type="PackedScene" uid="uid://bpx5qcij78f5c" path="res://Scenes/player.tscn" id="1_u0ag6"]
 [ext_resource type="Texture2D" uid="uid://jh0a4hle0gw" path="res://DerekAssets1/CUSStestFloor.png" id="2_ky4ue"]
-[ext_resource type="PackedScene" uid="uid://bjglehopef8aw" path="res://Scenes/platform.tscn" id="2_x28yt"]
+[ext_resource type="PackedScene" uid="uid://dn2xadkoc0u0v" path="res://Scenes/platform.tscn" id="2_x28yt"]
 [ext_resource type="Texture2D" uid="uid://dde3fj4u50mgv" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="3_swtwy"]
 [ext_resource type="PackedScene" uid="uid://dctt8ao0wvjef" path="res://Scenes/Coin.tscn" id="4_dlpjd"]
 [ext_resource type="PackedScene" uid="uid://bsi7c0jae4mmd" path="res://Scenes/killzone.tscn" id="6_hu1yd"]
+[ext_resource type="PackedScene" uid="uid://cyc641co7ttxd" path="res://Scenes/coke.tscn" id="7_60o0j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6i2ab"]
 texture = ExtResource("3_swtwy")
@@ -229,10 +230,6 @@ libraries = {
 }
 autoplay = "Platform1"
 
-[node name="Coin" parent="TileMap" instance=ExtResource("4_dlpjd")]
-position = Vector2(74, -61)
-scale = Vector2(0.5007, 0.5)
-
 [node name="Player" parent="." instance=ExtResource("1_u0ag6")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -245,3 +242,10 @@ position_smoothing_speed = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 shape = SubResource("WorldBoundaryShape2D_hicdn")
+
+[node name="Coke" parent="." instance=ExtResource("7_60o0j")]
+position = Vector2(160, 21)
+
+[node name="Coin" parent="." instance=ExtResource("4_dlpjd")]
+position = Vector2(72, -46)
+scale = Vector2(0.5007, 0.5)
