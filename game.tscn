@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://l0n4xi3cyp71"]
 
 [ext_resource type="PackedScene" uid="uid://bpx5qcij78f5c" path="res://Scenes/player.tscn" id="1_kkfru"]
-[ext_resource type="Texture2D" uid="uid://nrk6o0o2wydi" path="res://Assets/DerekAssets1/CUSSrotChicken.png" id="1_u80fj"]
 [ext_resource type="PackedScene" uid="uid://bsi7c0jae4mmd" path="res://Scenes/killzone.tscn" id="2_8t27f"]
 [ext_resource type="Texture2D" uid="uid://jh0a4hle0gw" path="res://Assets/DerekAssets1/CUSStestFloor.png" id="3_5yqp2"]
 [ext_resource type="PackedScene" uid="uid://dctt8ao0wvjef" path="res://Scenes/Coin.tscn" id="4_pv4gj"]
 [ext_resource type="PackedScene" uid="uid://dfrkjrt1gbxrj" path="res://Scenes/shelf.tscn" id="5_u65qf"]
+[ext_resource type="AudioStream" uid="uid://b8acrxfdqfqgr" path="res://Assets/music/BeepBox-Song.mp3" id="6_dfptu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hicdn"]
 distance = -311.0
@@ -26,10 +26,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7h7yl")
 
 [node name="Game" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(41, -1)
-texture = ExtResource("1_u80fj")
 
 [node name="Player" parent="." instance=ExtResource("1_kkfru")]
 
@@ -60,3 +56,7 @@ position = Vector2(2, -31)
 
 [node name="Node2D3" parent="." instance=ExtResource("5_u65qf")]
 position = Vector2(2, -61)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dfptu")
+autoplay = true
