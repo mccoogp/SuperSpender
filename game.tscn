@@ -1,12 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://l0n4xi3cyp71"]
+[gd_scene load_steps=20 format=3 uid="uid://l0n4xi3cyp71"]
 
 [ext_resource type="PackedScene" uid="uid://bpx5qcij78f5c" path="res://Scenes/player.tscn" id="1_kkfru"]
 [ext_resource type="PackedScene" uid="uid://bsi7c0jae4mmd" path="res://Scenes/killzone.tscn" id="2_8t27f"]
 [ext_resource type="Texture2D" uid="uid://jh0a4hle0gw" path="res://Assets/DerekAssets1/CUSStestFloor.png" id="3_5yqp2"]
+[ext_resource type="Script" path="res://label.gd" id="3_q1xtc"]
 [ext_resource type="Texture2D" uid="uid://cmthabn2qlmwg" path="res://Assets/DerekAssets1/CUSStestFloor2.png" id="4_ps1ca"]
 [ext_resource type="PackedScene" uid="uid://dctt8ao0wvjef" path="res://Scenes/Coin.tscn" id="4_pv4gj"]
 [ext_resource type="PackedScene" uid="uid://dfrkjrt1gbxrj" path="res://Scenes/shelf.tscn" id="5_u65qf"]
 [ext_resource type="AudioStream" uid="uid://b8acrxfdqfqgr" path="res://Assets/music/BeepBox-Song.mp3" id="6_dfptu"]
+[ext_resource type="Texture2D" uid="uid://ilpedyakh03q" path="res://Assets/DerekAssets1/CUSSwoodfloor1aseprite.png" id="7_tfuip"]
+[ext_resource type="Texture2D" uid="uid://u5xy06h1hwdi" path="res://Assets/DerekAssets1/CUSSshelf.png" id="8_d8p68"]
 [ext_resource type="Texture2D" uid="uid://bkeso4uifew56" path="res://Assets/DerekAssets1/CUSSlv1BG.png" id="8_i40xq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqxql"]
@@ -1320,10 +1323,33 @@ texture = ExtResource("4_ps1ca")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xyrgd"]
+texture = ExtResource("7_tfuip")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jpl47"]
+texture = ExtResource("8_d8p68")
+texture_region_size = Vector2i(12, 16)
+0:0/0 = 0
+1:0/0 = 0
+0:1/next_alternative_id = 2
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="TileSet" id="TileSet_3u5nx"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7h7yl")
 sources/2 = SubResource("TileSetAtlasSource_jl2hh")
+sources/3 = SubResource("TileSetAtlasSource_xyrgd")
+sources/4 = SubResource("TileSetAtlasSource_jpl47")
 
 [node name="Game" type="Node2D"]
 
@@ -1342,6 +1368,14 @@ limit_bottom = 600
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
+[node name="Label" type="Label" parent="Player"]
+offset_left = -21.0
+offset_top = -43.0
+offset_right = 19.0
+offset_bottom = -20.0
+horizontal_alignment = 1
+script = ExtResource("3_q1xtc")
+
 [node name="Area2D2" parent="." instance=ExtResource("2_8t27f")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
@@ -1350,10 +1384,13 @@ shape = SubResource("WorldBoundaryShape2D_hicdn")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3u5nx")
 format = 2
-layer_0/tile_data = PackedInt32Array(131069, 2, 0, 131070, 65538, 0, 131071, 2, 0, 65536, 65538, 0, 65537, 2, 0, 65538, 65538, 0, 65539, 2, 0, 65540, 65538, 0, 65541, 2, 0, 65542, 65538, 0, 131078, 2, 0, 65543, 2, 0, 131079, 2, 0, 65544, 65538, 0, 65545, 2, 0, 65546, 65538, 0, 65547, 2, 0, 65548, 65538, 0, 65549, 2, 0, 65550, 65538, 0, 131067, 2, 0, 131068, 65538, 0, 131065, 2, 0, 131066, 65538, 0, -262131, 65538, 0, -262130, 65538, 0, -262133, 65538, 0, -262132, 65538, 0, -262135, 65538, 0, -262134, 65538, 0, -262137, 65538, 0, -262136, 65538, 0, 131063, 2, 0, 131064, 65538, 0, 131061, 2, 0, 131062, 65538, 0, 131059, 2, 0, 131060, 65538, 0, 131057, 2, 0, 131058, 65538, 0, 131055, 2, 0, 131056, 65538, 0, 131053, 2, 0, 131054, 65538, 0, 131051, 2, 0, 131052, 65538, 0, 131048, 65538, 0, 131049, 2, 0, 131046, 65538, 0, 131047, 2, 0, 131044, 65538, 0, 131045, 2, 0, 131043, 2, 0, 65507, 2, 0, -29, 2, 0, -65565, 2, 0, -131101, 2, 0, -196637, 2, 0, -262173, 2, 0, -327709, 2, 0, 65551, 2, 0, 65552, 65538, 0, 65553, 2, 0, 65554, 65538, 0, 65555, 2, 0, 65556, 65538, 0, 65557, 2, 0, 65558, 65538, 0, 65559, 2, 0, 65560, 65538, 0, 65561, 2, 0, 65562, 65538, 0, 65563, 2, 0, 65564, 65538, 0, 65566, 65538, 0, 65567, 2, 0, 65565, 2, 0, 65568, 65538, 0, 65569, 2, 0, 65570, 65538, 0, 65571, 2, 0, 65572, 65538, 0, 65573, 2, 0, 65574, 65538, 0, 65575, 2, 0, 65576, 65538, 0, 65577, 2, 0, 65578, 65538, 0, 65579, 2, 0, 65580, 65538, 0, 65581, 2, 0, 65582, 65538, 0, 65583, 2, 0, 65584, 65538, 0, 65585, 2, 0, 65586, 65538, 0, 65587, 2, 0, 65588, 65538, 0, 65589, 2, 0, 65590, 65538, 0, 65591, 2, 0, 65592, 65538, 0, 56, 2, 0, -65480, 2, 0, -131016, 2, 0, -196552, 2, 0, -262088, 2, 0, -327624, 2, 0, -393160, 2, 0, 131050, 65538, 0)
+layer_0/tile_data = PackedInt32Array(131069, 2, 0, 131070, 65538, 0, 131071, 2, 0, 65536, 65538, 0, 65537, 2, 0, 65538, 65538, 0, 65539, 2, 0, 65540, 65538, 0, 65541, 2, 0, 65542, 65538, 0, 131078, 2, 0, 65543, 2, 0, 131079, 2, 0, 65544, 65538, 0, 65545, 2, 0, 65546, 65538, 0, 65547, 2, 0, 65548, 65538, 0, 65549, 2, 0, 65550, 65538, 0, 131067, 2, 0, 131068, 65538, 0, 131065, 2, 0, 131066, 65538, 0, -262131, 3, 0, -262133, 3, 0, -262132, 65539, 0, -262135, 3, 0, -262134, 65539, 0, -262137, 3, 0, -262136, 65539, 0, 131063, 2, 0, 131064, 65538, 0, 131061, 2, 0, 131062, 65538, 0, 131059, 2, 0, 131060, 65538, 0, 131057, 2, 0, 131058, 65538, 0, 131055, 2, 0, 131056, 65538, 0, 131053, 2, 0, 131054, 65538, 0, 131051, 2, 0, 131052, 65538, 0, 131048, 65538, 0, 131049, 2, 0, 131046, 65538, 0, 131047, 2, 0, 131044, 65538, 0, 131045, 2, 0, 131043, 2, 0, 65507, 2, 0, -29, 2, 0, -65565, 2, 0, -131101, 2, 0, -196637, 2, 0, -262173, 2, 0, -327709, 2, 0, 65551, 2, 0, 65552, 65538, 0, 65553, 2, 0, 65554, 65538, 0, 65555, 2, 0, 65556, 65538, 0, 65557, 2, 0, 65558, 65538, 0, 65559, 2, 0, 65560, 65538, 0, 65561, 2, 0, 65562, 65538, 0, 65563, 2, 0, 65564, 65538, 0, 65566, 65538, 0, 65567, 2, 0, 65565, 2, 0, 65568, 65538, 0, 65569, 2, 0, 65570, 65538, 0, 65571, 2, 0, 65572, 65538, 0, 65573, 2, 0, 65574, 65538, 0, 65575, 2, 0, 65576, 65538, 0, 65577, 2, 0, 65578, 65538, 0, 65579, 2, 0, 65580, 65538, 0, 65581, 2, 0, 65582, 65538, 0, 65583, 2, 0, 65584, 65538, 0, 65585, 2, 0, 65586, 65538, 0, 65587, 2, 0, 65588, 65538, 0, 65589, 2, 0, 65590, 65538, 0, 65591, 2, 0, 65592, 65538, 0, 56, 2, 0, -65480, 2, 0, -131016, 2, 0, -196552, 2, 0, -262088, 2, 0, -327624, 2, 0, -393160, 2, 0, 131050, 65538, 0, -262129, 65540, 1, -262128, 65540, 1, -262125, 65540, 1, -262124, 65540, 1, -262123, 65540, 1, -262120, 65540, 1, -262119, 65540, 1, -262117, 3, 0, -262116, 3, 0, -262115, 3, 0, -262114, 3, 0, -262113, 3, 0, -262112, 3, 0)
 
 [node name="Coin2" parent="." instance=ExtResource("4_pv4gj")]
 position = Vector2(170, -88)
+
+[node name="Coin3" parent="." instance=ExtResource("4_pv4gj")]
+position = Vector2(483, -89)
 
 [node name="Node2D" parent="." instance=ExtResource("5_u65qf")]
 position = Vector2(2, -1)
